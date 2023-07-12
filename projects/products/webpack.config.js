@@ -1,6 +1,6 @@
 const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-module.exports = withModuleFederationPlugin({
+const productsMF = module.exports = withModuleFederationPlugin({
 
   name: 'products',
 
@@ -13,3 +13,7 @@ module.exports = withModuleFederationPlugin({
   },
 
 });
+
+productsMF.output.publicPath = 'http://localhost:5600/';
+
+module.exports = productsMF;
