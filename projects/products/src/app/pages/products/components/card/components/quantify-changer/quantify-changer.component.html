@@ -1,3 +1,13 @@
-<p>
-  quantify-changer works!
-</p>
+<div class="inline-flex items-center mt-2">
+  <button [disabled]="isBtnDisabled()" (click)="onDecrement()"
+    class="inline-flex items-center px-2 py-1 text-gray-600 bg-white border-gray-200 rounded hover:bg-gray-200 active:bg-gray-200 disabled:opacity-50">
+    <pooldys-svg-minus></pooldys-svg-minus>
+  </button>
+  <div class="inline-flex items-center px-4 py-1 text-gray-600 border-gray-100 select-none">
+    {{10}}
+  </div>
+  <button (click)="onIncrement()"
+    class="inline-flex items-center px-2 py-1 text-gray-600 bg-white border-gray-200 rounded hover:bg-gray-200 active:bg-gray-200">
+    <pooldys-svg-plus></pooldys-svg-plus>
+  </button>
+</div>

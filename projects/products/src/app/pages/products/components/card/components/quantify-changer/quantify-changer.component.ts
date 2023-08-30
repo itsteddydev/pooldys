@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { SvgMinusComponent } from './components/svg-minus/svg-minus.component';
+import { SvgPlusComponent } from './components/svg-plus/svg-plus.component';
 
 @Component({
   selector: 'app-quantify-changer',
   templateUrl: './quantify-changer.component.html',
-  styleUrls: ['./quantify-changer.component.css']
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgMinusComponent, SvgPlusComponent]
 })
-export class QuantifyChangerComponent implements OnInit {
+export class QuantifyChangerComponent {
+  public count = 0;
+  @Input() productId!: number;
+  @Output() quantifyProductChanged = new EventEmitter();
 
-  constructor() { }
 
-  ngOnInit() {
+  onDecrement(): void {
+    if (this.count > 0) {
+      this.count--;
+    }
+  }
+  onIncrement(): void {
+    this.count++;
   }
 
+  isBtnDisabled(): boolean {
+    return this.count === 0;
+  }
 }
