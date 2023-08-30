@@ -5,7 +5,7 @@ const productsMF = module.exports = withModuleFederationPlugin({
   name: 'products',
 
   exposes: {
-    './Component': './projects/products/src/app/app.component.ts',
+    './ListProducts': './projects/products/src/app/products/products.module.ts',
   },
 
   shared: {
