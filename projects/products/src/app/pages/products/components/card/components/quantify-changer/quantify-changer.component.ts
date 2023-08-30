@@ -3,7 +3,7 @@ import { SvgMinusComponent } from './components/svg-minus/svg-minus.component';
 import { SvgPlusComponent } from './components/svg-plus/svg-plus.component';
 
 @Component({
-  selector: 'app-quantify-changer',
+  selector: 'pooldys-quantify-changer',
   templateUrl: './quantify-changer.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
