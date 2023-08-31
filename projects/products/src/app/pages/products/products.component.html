@@ -1,3 +1,10 @@
-<p>
-  products works!
-</p>
+<ng-container *ngIf="product$ | async as products; else loading">
+  <!--   {{isCartEmpty}} - isCartEmpty -->
+  <h1 class="text-xl font-semibold p-4">Todays Best Deals For You!</h1>
+  <div class="flex flex-wrap ">
+    <pooldys-card class="p-4 lg:w-1/4 md:w-1/2" *ngFor="let product of products" [product]="product" />
+  </div>
+</ng-container>
+<ng-template #loading>
+  Loading...
+</ng-template>
