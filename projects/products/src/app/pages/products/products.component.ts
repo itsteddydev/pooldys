@@ -1,4 +1,4 @@
-import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { CardComponent } from './components/card/card.component';
 import { Observable } from 'rxjs';
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgFor,
     AsyncPipe,
     CardComponent,
-    HttpClientModule, JsonPipe
+    HttpClientModule
   ]
 })
 export default class ProductsComponent implements OnInit {
