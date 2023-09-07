@@ -3,13 +3,9 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  /*{
-     path: '',
-   loadChildren: () => import('./shell/shell.module').then(m => m.ShellModule)
- }*/
   {
     path: 'products',
-    loadChildren: () => loadRemoteModule({
+    loadComponent: () => loadRemoteModule({
       type: 'module',
       remoteEntry: 'http://localhost:5600/remoteEntry.js',
       exposedModule: './ListProducts',
